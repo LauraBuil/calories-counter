@@ -1,0 +1,8 @@
+{
+  "name": "@calories-counter/styles",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    "./global.scss": "./src/global.scss"
+  }
+}

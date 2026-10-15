@@ -1,0 +1,34 @@
+.stat {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.15rem 0.5rem;
+  align-items: center;
+}
+
+.dot {
+  grid-row: 1 / 3;
+  width: 0.65rem;
+  height: 2rem;
+  border-radius: 999px;
+}
+
+.protein {
+  background: var(--color-protein);
+}
+
+.carbs {
+  background: var(--color-carbs);
+}
+
+.fat {
+  background: var(--color-fat);
+}
+
+.label {
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+
+.value {
+  font-size: 0.95rem;
+}

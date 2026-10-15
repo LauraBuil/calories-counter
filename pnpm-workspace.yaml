@@ -1,0 +1,13 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+allowBuilds:
+  '@parcel/watcher': true
+  unrs-resolver: true
+
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - esbuild
+  - sharp
+  - unrs-resolver
