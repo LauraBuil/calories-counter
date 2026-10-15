@@ -1,0 +1,101 @@
+.card {
+  min-width: 0;
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+
+  p {
+    margin-bottom: 0.2rem;
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  h2 {
+    margin-bottom: 0;
+    font-family: "Josefin Slab", serif;
+    font-size: 1.35rem;
+  }
+
+  button {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0;
+    border-radius: 50%;
+    color: var(--color-text);
+    background: var(--color-primary-soft);
+    font-weight: 700;
+  }
+}
+
+.meals {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.meal {
+  display: grid;
+  grid-template-columns: 3.4rem minmax(0, 1fr) auto;
+  gap: 0.8rem;
+  align-items: center;
+  min-width: 0;
+  padding: 0.65rem;
+  border-radius: 1rem;
+  background: var(--color-surface-muted);
+}
+
+.foodThumbnail,
+.mealIcon {
+  display: grid;
+  width: 3.4rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 0.8rem;
+  background: var(--color-primary-soft);
+}
+
+.foodThumbnail {
+  background: var(--color-primary-soft) url("../../assets/breakfast-bowl.png") center / 140% no-repeat;
+}
+
+.mealIcon {
+  font-size: 1.35rem;
+}
+
+.mealCopy {
+  display: grid;
+  min-width: 0;
+
+  strong,
+  small {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  strong {
+    font-size: 0.88rem;
+  }
+
+  small {
+    margin-top: 0.25rem;
+    color: var(--color-text-muted);
+  }
+}
+
+.kcal {
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  white-space: nowrap;
+}

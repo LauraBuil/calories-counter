@@ -1,0 +1,62 @@
+.navigation {
+  position: fixed;
+  z-index: 10;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: min(calc(100% - 2rem), 40rem);
+  margin: 0 auto;
+  padding: 0.55rem 0.6rem max(0.55rem, env(safe-area-inset-bottom));
+  border: 1px solid var(--color-border);
+  border-radius: 1.35rem;
+  background: color-mix(in srgb, var(--color-surface) 92%, transparent);
+  box-shadow: 0 14px 40px rgb(72 48 36 / 15%);
+  backdrop-filter: blur(18px);
+
+  button {
+    display: grid;
+    gap: 0.2rem;
+    justify-items: center;
+    border: 0;
+    color: var(--color-text-muted);
+    background: transparent;
+
+    span {
+      display: grid;
+      width: 1.7rem;
+      height: 1.7rem;
+      place-items: center;
+      font-size: 1.15rem;
+    }
+
+    small {
+      font-size: 0.62rem;
+    }
+  }
+}
+
+.active {
+  color: var(--color-primary-strong) !important;
+}
+
+.add span {
+  width: 2.55rem !important;
+  height: 2.55rem !important;
+  margin-top: -1.35rem;
+  border-radius: 50%;
+  color: var(--color-chocolate);
+  background: var(--color-primary);
+  box-shadow: 0 8px 20px rgb(244 155 136 / 35%);
+  font-size: 1.55rem !important;
+}
+
+@media (min-width: 900px) {
+  .navigation {
+    position: sticky;
+    right: auto;
+    bottom: 1rem;
+    left: auto;
+  }
+}

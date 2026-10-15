@@ -1,20 +1,30 @@
+@import "@fontsource/josefin-sans/400.css";
+@import "@fontsource/josefin-sans/500.css";
+@import "@fontsource/josefin-sans/600.css";
+@import "@fontsource/josefin-sans/700.css";
+@import "@fontsource/josefin-slab/500.css";
+@import "@fontsource/josefin-slab/600.css";
+
 :root {
-  --color-background: #f5f7f2;
-  --color-surface: #ffffff;
-  --color-surface-muted: #eef2ea;
-  --color-text: #182019;
-  --color-text-muted: #69736a;
-  --color-primary: #2f7d4a;
-  --color-primary-strong: #205d35;
-  --color-primary-soft: #dff2e5;
-  --color-border: #dfe6dd;
-  --color-protein: #e9806e;
-  --color-carbs: #e0ae42;
-  --color-fat: #718dcc;
-  --shadow-card: 0 16px 45px rgb(42 70 48 / 8%);
-  --radius-small: 0.75rem;
-  --radius-medium: 1.25rem;
-  --radius-large: 1.75rem;
+  color-scheme: light;
+  --color-background: #fff8f2;
+  --color-surface: #fffdf9;
+  --color-surface-muted: #fbefe8;
+  --color-text: #242120;
+  --color-text-muted: #756d68;
+  --color-primary: #f49b88;
+  --color-primary-strong: #df7f6d;
+  --color-primary-soft: #f8c8bd;
+  --color-pistachio: #a9c4af;
+  --color-border: #f1e3db;
+  --color-protein: #f49b88;
+  --color-carbs: #f8c8bd;
+  --color-fat: #a9c4af;
+  --color-chocolate: #242120;
+  --shadow-card: 0 18px 50px rgb(89 58 42 / 8%);
+  --radius-small: 0.85rem;
+  --radius-medium: 1.3rem;
+  --radius-large: 2rem;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -23,12 +33,72 @@
   --space-6: 2rem;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --color-background: #242120;
+    --color-surface: #2e2a28;
+    --color-surface-muted: #37312e;
+    --color-text: #fff8f2;
+    --color-text-muted: #c7bbb3;
+    --color-primary: #e89482;
+    --color-primary-strong: #f0aa9a;
+    --color-primary-soft: #6d4b44;
+    --color-pistachio: #91ab97;
+    --color-border: #463e3a;
+    --color-protein: #e89482;
+    --color-carbs: #d9aaa0;
+    --color-fat: #91ab97;
+    --color-chocolate: #fff8f2;
+    --shadow-card: 0 18px 50px rgb(0 0 0 / 22%);
+  }
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-background: #fff8f2;
+  --color-surface: #fffdf9;
+  --color-surface-muted: #fbefe8;
+  --color-text: #242120;
+  --color-text-muted: #756d68;
+  --color-primary: #f49b88;
+  --color-primary-strong: #df7f6d;
+  --color-primary-soft: #f8c8bd;
+  --color-pistachio: #a9c4af;
+  --color-border: #f1e3db;
+  --color-protein: #f49b88;
+  --color-carbs: #f8c8bd;
+  --color-fat: #a9c4af;
+  --color-chocolate: #242120;
+  --shadow-card: 0 18px 50px rgb(89 58 42 / 8%);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-background: #242120;
+  --color-surface: #2e2a28;
+  --color-surface-muted: #37312e;
+  --color-text: #fff8f2;
+  --color-text-muted: #c7bbb3;
+  --color-primary: #e89482;
+  --color-primary-strong: #f0aa9a;
+  --color-primary-soft: #6d4b44;
+  --color-pistachio: #91ab97;
+  --color-border: #463e3a;
+  --color-protein: #e89482;
+  --color-carbs: #d9aaa0;
+  --color-fat: #91ab97;
+  --color-chocolate: #fff8f2;
+  --shadow-card: 0 18px 50px rgb(0 0 0 / 22%);
+}
+
 * {
   box-sizing: border-box;
 }
 
 html,
-body {
+body,
+#root {
   min-height: 100%;
 }
 
@@ -36,7 +106,7 @@ body {
   margin: 0;
   color: var(--color-text);
   background: var(--color-background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -48,4 +118,11 @@ input {
 
 button {
   cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
 }

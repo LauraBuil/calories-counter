@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import {
   calorieProgress,
   remainingCalories,
@@ -19,33 +20,32 @@ export function DailySummary({ nutrition }: DailySummaryProps) {
       <div className={styles.heading}>
         <div>
           <p className={styles.eyebrow}>Aujourd’hui</p>
-          <h2 id="daily-summary-title">Ton objectif</h2>
+          <h2 id="daily-summary-title">Ton équilibre</h2>
         </div>
         <strong>{progress}%</strong>
       </div>
 
-      <div className={styles.calories}>
-        <strong>{nutrition.calories.toLocaleString("fr-FR")}</strong>
-        <span>/ {nutrition.calorieGoal.toLocaleString("fr-FR")} kcal</span>
-      </div>
-
       <div
-        className={styles.progress}
+        className={styles.calorieRing}
+        style={{ "--progress": `${progress}%` } as CSSProperties}
         role="progressbar"
         aria-label="Progression calorique"
         aria-valuemin={0}
         aria-valuemax={100}
         aria-valuenow={progress}
       >
-        <span style={{ width: `${progress}%` }} />
+        <div className={styles.calories}>
+          <strong>{nutrition.calories.toLocaleString("fr-FR")}</strong>
+          <span>/ {nutrition.calorieGoal.toLocaleString("fr-FR")} kcal</span>
+        </div>
       </div>
 
       <p className={styles.remaining}>{remaining} kcal restantes</p>
 
       <div className={styles.macros}>
-        <MacroStat label="Protéines" value={nutrition.protein} tone="protein" />
-        <MacroStat label="Glucides" value={nutrition.carbohydrates} tone="carbs" />
-        <MacroStat label="Lipides" value={nutrition.fat} tone="fat" />
+        <MacroStat label="Protéines" value={nutrition.protein} goal={120} tone="protein" />
+        <MacroStat label="Glucides" value={nutrition.carbohydrates} goal={250} tone="carbs" />
+        <MacroStat label="Lipides" value={nutrition.fat} goal={70} tone="fat" />
       </div>
     </section>
   );

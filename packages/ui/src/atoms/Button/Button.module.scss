@@ -1,9 +1,10 @@
 .button {
-  min-height: 2.875rem;
-  padding: 0.75rem 1.1rem;
+  min-height: 3rem;
+  padding: 0.8rem 1.15rem;
   border: 1px solid transparent;
   border-radius: var(--radius-small);
-  font-weight: 700;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
   transition: background-color 160ms ease, transform 160ms ease;
 
   &:active {
@@ -17,7 +18,7 @@
 }
 
 .primary {
-  color: #fff;
+  color: var(--color-chocolate);
   background: var(--color-primary);
 
   &:hover {
@@ -26,7 +27,7 @@
 }
 
 .secondary {
-  color: var(--color-primary-strong);
+  color: var(--color-text);
   background: var(--color-primary-soft);
 
   &:hover {
